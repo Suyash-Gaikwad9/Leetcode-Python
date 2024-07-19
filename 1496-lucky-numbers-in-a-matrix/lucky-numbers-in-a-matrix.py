@@ -13,8 +13,8 @@ class Solution:
                     cur_max = max(cur_max, matrix[r][c])
                 col_max.add(cur_max)
 
-        for n in row_min:
-            if n in col_max:
+        for n in col_max:
+            if n in row_min:
                 res.append(n)
         
         return res
