@@ -3,11 +3,17 @@ class Solution:
         pairs = []
 
         for i, n in enumerate(nums):
-            n = str(n)
             mapped_n = 0
-            for c in n:
-                mapped_n *= 10
-                mapped_n += mapping[int(c)]
+            base = 1
+
+            if n == 0:
+                mapped_n = mapping[n]
+
+            while n > 0:
+                digit = n % 10
+                n = n // 10
+                mapped_n += base * mapping[digit]
+                base *= 10
 
             pairs.append((mapped_n, i))
 
