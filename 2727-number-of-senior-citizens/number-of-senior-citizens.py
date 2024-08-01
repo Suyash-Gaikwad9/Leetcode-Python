@@ -6,9 +6,13 @@ class Solution:
 
         for d in details:
             
-            s = d[11] + d[12]
+            ten = ord(d[11]) - ord("0")
+            one = ord(d[12]) - ord("0")
 
-            if int(s) > 60:
+            age = one + 10*ten
+
+
+            if age > 60:
                 res += 1
         
         return res
